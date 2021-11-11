@@ -1,6 +1,48 @@
-type ExampleEntity @entity {
+# -------------------------------------------------
+# Entities created from RubiconMarket contract.
+# -------------------------------------------------
+"""
+UserTrade model, a custom model to represent an individual user's trade state.
+"""
+type LogMake @entity {
   id: ID!
-  count: BigInt!
-  id: Bytes! # bytes32
-  pair: Bytes! # bytes32
+  pair: Bytes!
+  maker: Bytes!
+  pay_gem: Bytes!
+  buy_gem: Bytes!
+  pay_amt: BigInt!
+  buy_amt: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+
+"""
+type LogTake @entity {
+  id: ID!
+  pair: Bytes!
+  maker: Bytes!
+  taker: Bytes!
+  pay_gem: Bytes!
+  buy_gem: Bytes!
+  take_amt: BigInt!
+  give_amt: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+
+"""
+type LogKill @entity {
+  id: ID!
+  pair: Bytes!
+  maker: Bytes!
+  pay_gem: Bytes!
+  buy_gem: Bytes!
+  pay_amt: BigInt!
+  buy_amt: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
 }
